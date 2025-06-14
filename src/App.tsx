@@ -1,6 +1,6 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import Footer from "@/components/Footer";
@@ -13,7 +13,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="system" storageKey="idea-board-theme">
-        <BrowserRouter>
+        <HashRouter>
           <div className="min-h-screen flex flex-col">
             <div className="flex-1">
               <Routes>
@@ -24,7 +24,7 @@ function App() {
             <Footer />
           </div>
           <Toaster />
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
     </QueryClientProvider>
   );
